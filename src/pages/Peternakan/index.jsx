@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar/sidebar";
-import DropdownComponent from "../../Dropdown/dropdown";
+import DropdownComponent from "../../components/Dropdown/dropdown";
 
 export default function PeternakanIndex() {
   return (
