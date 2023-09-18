@@ -22,7 +22,7 @@ export default function Sidebar() {
         {/* Peternakan */}
         <div className='w-full'>
           <Link
-            to='/peternakan'
+            to='/peternakan/analisis'
             className='h-16 bg-gray-900 justify-center rounded-full text-blue-500 font-bold text-2xl flex items-center'
           >
             Peternakan
@@ -31,7 +31,7 @@ export default function Sidebar() {
         {/* Sapi Terdata */}
         <div className='w-full'>
           <Link
-            to='/sapi-terdata'
+            to='/sapi-terdata/tabel'
             className='h-16 bg-gray-900 justify-center rounded-full text-blue-500 font-bold text-2xl flex items-center'
           >
             Sapi Terdata

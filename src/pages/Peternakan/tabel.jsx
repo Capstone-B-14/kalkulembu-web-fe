@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Sidebar from "../../components/Sidebar/sidebar";
 import DropdownComponent from "../../components/Dropdown/dropdown";
 
-export default function PeternakanIndex() {
+export default function PeternakanTabel() {
   return (
     <>
       <div className='flex'>

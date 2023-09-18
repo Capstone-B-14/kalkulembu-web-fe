@@ -3,8 +3,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 // importing pages
 import HomePage from './pages/Home';
 import SignupPage from './pages/Signup';
-import PeternakanIndex from './pages/Peternakan';
+import PeternakanTabel from './pages/Peternakan/tabel';
 import PeternakanAnalisis from './pages/Peternakan/analisis';
+import SapiTabel from './pages/Sapi/tabel';
 
 function App() {
   return (
@@ -12,8 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/signup" element={<SignupPage />} />
-        <Route path="/peternakan" element={<PeternakanIndex />} />
+        <Route path="/peternakan/tabel" element={<PeternakanTabel />} />
         <Route path="/peternakan/analisis" element={<PeternakanAnalisis />} />
+        <Route path="/sapi-terdata/tabel" element={<SapiTabel />} />
       </Routes>
     </BrowserRouter>
   );
