@@ -1,10 +1,11 @@
-import Sidebar from "../../components/Sidebar/sidebar";
+import Sidebar from "../../components/Sidebar";
 
 export default function HomePage() {
   return (
     <>
-      <Sidebar />
-      <div className='text-3xl font-bold underline'>This is HomePage</div>
+      <div className='flex'>
+        <Sidebar />
+      </div>
     </>
   );
 }

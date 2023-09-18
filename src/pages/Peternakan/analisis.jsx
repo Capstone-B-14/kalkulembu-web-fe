@@ -1,21 +1,37 @@
 import React from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import Sidebar from "../../components/Sidebar/sidebar";
-import DropdownComponent from "../../components/Dropdown/dropdown";
-import TimeSeriesChart from "../../components/Chart/Chart";
+import Sidebar from "../../components/Sidebar";
+import DropdownComponent from "../../components/Dropdown";
+import TimeSeriesChart from "../../components/Chart";
+import Button from "../../components/Button";
 
 export default function PeternakanAnalisis() {
   return (
     <>
-      <div className='flex'>
-        <div className=''>
+      <div className='flex '>
+        <div className='flex'>
           <Sidebar />
         </div>
-        <div className=''>
-          <DropdownComponent />
+        <div className='space-y-4'>
+          <div className='flex space x-4'>
+            <Link to='/peternakan/analisis'>
+              <Button className='bg-blue-500 text-white px-4 py-2 rounded'>
+                Analisis
+              </Button>
+            </Link>
+            <Link to='/peternakan/tabel'>
+              <Button className='bg-blue-500 text-white px-4 py-2 rounded'>
+                Tabel
+              </Button>
+            </Link>
+          </div>
+          <div className='w-1/2 pt-12 pl-8'>
+            <DropdownComponent />
+          </div>
+          <div className='w-2/3'></div>
+          <TimeSeriesChart />
         </div>
-        <TimeSeriesChart />
       </div>
     </>
   );
