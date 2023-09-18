@@ -9,10 +9,10 @@ export default function Sidebar() {
     return (
       <Link
         to={linkto}
-        className={`text-2xl flex items-center justify-center hoverAnimation ${
+        className={`text-2xl flex items-center h-12 rounded-full justify-center transition-colors duration-300 ${
           location.pathname === linkto
-            ? "font-semibold bg-gray-600 h-16 rounded-full text-white"
-            : "font-normal"
+            ? "font-semibold bg-gray-600 rounded-full text-white"
+            : "hover:bg-gray-600 hover:text-white font-normal"
         }`}
         onClick={() => {
           setKey((prevKey) => prevKey + 1); // Update the key to trigger re-render
@@ -35,7 +35,7 @@ export default function Sidebar() {
         <SidebarLink text='Profil' linkto='/profil-peternak' />
       </div>
       {/* Logout Button (or Login Button) */}
-      <div className='w-full pt-96'>
+      <div className='w-full'>
         <button
           onClick={() => {
             console.log("Logout");
