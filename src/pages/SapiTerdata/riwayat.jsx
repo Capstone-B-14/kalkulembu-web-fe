@@ -1,5 +1,4 @@
 import Sidebar from "../../components/Sidebar";
-import Button from "../../components/Button";
 import DropdownComponent from "../../components/Dropdown";
 import NavButtonSapi from "../../components/NavButton/sapi";
 
@@ -7,10 +6,10 @@ export default function SapiTerdataRiwayat() {
     return (
       <>
         <div className='flex bg-[#FBFBFB]'>
-        <div>
-          <Sidebar />
-        </div>
-        
+          <div>
+            <Sidebar />
+          </div>
+
           <div className=" mx-40 my-20 min-h-max">
             <div className="mb-10 mr-40">
             <DropdownComponent></DropdownComponent>

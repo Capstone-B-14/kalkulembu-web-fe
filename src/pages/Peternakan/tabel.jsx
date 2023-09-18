@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Sidebar from "../../components/Sidebar";
 import DropdownComponent from "../../components/Dropdown";
+import NavButtonPeternakan from "../../components/NavButton/peternakan";
 
 export default function PeternakanTabel() {
   return (
@@ -13,6 +14,7 @@ export default function PeternakanTabel() {
         </div>
         <div className=''>
           <DropdownComponent />
+          <NavButtonPeternakan></NavButtonPeternakan>
         </div>
       </div>
     </>

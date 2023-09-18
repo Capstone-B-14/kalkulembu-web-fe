@@ -5,6 +5,7 @@ import Sidebar from "../../components/Sidebar";
 import DropdownComponent from "../../components/Dropdown";
 import TimeSeriesChart from "../../components/Chart";
 import Button from "../../components/Button";
+import NavButtonPeternakan from "../../components/NavButton/peternakan";
 
 export default function PeternakanAnalisis() {
   return (
@@ -15,7 +16,8 @@ export default function PeternakanAnalisis() {
         </div>
         <div className='space-y-4'>
           <div className='flex space x-4'>
-            <Link to='/peternakan/analisis'>
+            <NavButtonPeternakan></NavButtonPeternakan>
+            {/* <Link to='/peternakan/analisis'>
               <Button className='bg-blue-500 text-white px-4 py-2 rounded'>
                 Analisis
               </Button>
@@ -24,7 +26,7 @@ export default function PeternakanAnalisis() {
               <Button className='bg-blue-500 text-white px-4 py-2 rounded'>
                 Tabel
               </Button>
-            </Link>
+            </Link> */}
           </div>
           <div className='w-1/2 pt-12 pl-8'>
             <DropdownComponent />
