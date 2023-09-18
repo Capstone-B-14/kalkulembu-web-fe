@@ -5,13 +5,13 @@ import Tabel from "../../components/Tabel/personal";
 
 export default function SapiTabel() {
     const data = [
-        { nama: 'John Doe', usia: 25, alamat: 'Jalan A' },
-        { nama: 'Jane Smith', usia: 30, alamat: 'Jalan B' },
-        { nama: 'Bob Johnson', usia: 35, alamat: 'Jalan C' },
+        { tanggal: '18/9/2023', umur: 8, bobot: '280' },
+        { tanggal: '18/9/2023', umur: 8, bobot: '280' },
+        { tanggal: '18/9/2023', umur: 8, bobot: '280' },
       ];
     return (
       <>
-        <div className='flex'>
+        <div className='flex bg-[#FBFBFB]'>
           <div className=''>
             <Sidebar />
           </div>
