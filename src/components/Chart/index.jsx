@@ -62,9 +62,7 @@ const TimeSeriesChart = () => {
     responsive: true,
     maintainAspectRatio: true,
     layout: {
-      padding: {
-        top: 40,
-      },
+      padding: {},
     },
     plugins: {
       legend: {

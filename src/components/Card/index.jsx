@@ -1,5 +1,24 @@
 import React from "react";
 
+// const Card = ({classname,action}) => {
+//   return(
+//     <div>
+//       {children}
+//     </div>
+//   );
+// };
+
+// export default Card;
+
+
+// export default function Card({children, classname, action}){
+//   return(
+//     <Card classname={classname} onClick={action}>
+//       {children}
+//     </Card>
+//   );
+// }
+
 const Card = (props) => {
   return (
     <div>
