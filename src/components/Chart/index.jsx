@@ -4,13 +4,26 @@ import "chartjs-adapter-date-fns";
 import { enUS } from "date-fns/locale";
 import { Chart, registerables } from "chart.js";
 import dayjs from "dayjs";
+
 import dailyCowWeightData from "../../_data/dailyCow"; // Import dailyCowWeightData from the correct path
+import Button from "../Button";
+import DropdownComponent from "../../components/Dropdown";
 
 Chart.register(...registerables);
+
+const timeFilters = [
+  { key: "day", value: "day" },
+  { key: "month", value: "month" },
+  { key: "year", value: "year" },
+];
 
 const TimeSeriesChart = () => {
   const [chartData, setChartData] = useState(dailyCowWeightData);
   const [filter, setFilter] = useState("day"); // Default filter
+
+  const handleFilterChange = (selectedOption) => {
+    setFilter(selectedOption.value);
+  };
 
   useEffect(() => {
     // Filter data based on the selected filter (day, month, year)
@@ -47,11 +60,20 @@ const TimeSeriesChart = () => {
   // Define chart options
   const options = {
     responsive: true,
-    maintainAspectRatio: false,
+    maintainAspectRatio: true,
+    layout: {
+      padding: {
+        top: 40,
+      },
+    },
     plugins: {
       legend: {
         display: true,
         position: "top",
+      },
+      title: {
+        display: true,
+        text: "Jumlah Sapi di Peternakan",
       },
       datalabels: {
         display: true,
@@ -84,15 +106,16 @@ const TimeSeriesChart = () => {
   };
 
   return (
-    <div>
-      <h2>Time Series Chart</h2>
-      <div>
-        {/* Filter buttons */}
-        <button onClick={() => setFilter("day")}>Day</button>
-        <button onClick={() => setFilter("month")}>Month</button>
-        <button onClick={() => setFilter("year")}>Year</button>
+    <div className='h-full w-full p-2'>
+      <div className='absolute right-12'>
+        <DropdownComponent
+          options={timeFilters}
+          value={filter}
+          onSelect={handleFilterChange}
+          placeholder='Pilih Peternakan'
+        />
       </div>
-      <div>
+      <div className='h-full min-w-full'>
         {/* Chart */}
         <Line data={chartDataFormatted} options={options} />
       </div>

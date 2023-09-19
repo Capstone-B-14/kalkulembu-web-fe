@@ -14,7 +14,7 @@ export default function PeternakanTabel() {
         </div>
         <div className=''>
           <DropdownComponent />
-          <NavButtonPeternakan></NavButtonPeternakan>
+          <NavButtonPeternakan />
         </div>
       </div>
     </>
