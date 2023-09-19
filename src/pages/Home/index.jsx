@@ -4,7 +4,7 @@ import cardData from "../../components/Card/cardData.jsx";
 
 export default function HomePage() {
   return (
-    <div className="flex">
+    <div className="flex bg-[#FBFBFB]">
       <Sidebar />
       <Card details={cardData} />
     </div>

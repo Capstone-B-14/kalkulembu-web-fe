@@ -10,7 +10,7 @@ import NavButtonPeternakan from "../../components/NavButton/peternakan";
 export default function PeternakanAnalisis() {
   return (
     <>
-      <div className='flex '>
+      <div className='flex bg-[#FBFBFB]'>
         <div className='flex'>
           <Sidebar />
         </div>
