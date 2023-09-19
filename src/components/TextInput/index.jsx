@@ -7,6 +7,8 @@ export default function TextInput({
   type,
   placeholder,
   onChange,
+  disabled,
+  style,
 }) {
   return (
     <div>
@@ -26,7 +28,9 @@ export default function TextInput({
           type={type}
           placeholder={placeholder}
           onChange={onChange}
+          disabled={disabled}
           className="block w-full rounded-[15px] pl-3 bg-[#D9D9D9] border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600"
+          style={style}
         />
       </div>
     </div>
