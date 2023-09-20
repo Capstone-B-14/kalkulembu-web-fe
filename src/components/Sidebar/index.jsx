@@ -35,7 +35,7 @@ export default function Sidebar() {
       <div className="w-64 my-12 space-y-4">
         <SidebarLink text="Dashboard" linkto="/" />
         <SidebarLink text="Peternakan" linkto="/peternakan/analisis" />
-        <SidebarLink text="Sapi Terdata" linkto="/sapi-terdata/tabel" />
+        <SidebarLink text="Sapi Terdata" linkto="/sapi-terdata" />
         <SidebarLink text="Profil" linkto="/profile" />
       </div>
       {/* Logout Button (or Login Button) */}
