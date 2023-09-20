@@ -7,6 +7,7 @@ import PeternakanTabel from './pages/Peternakan/tabel';
 import PeternakanAnalisis from './pages/Peternakan/analisis';
 import SapiTerdataRiwayat from './pages/SapiTerdata/riwayat';
 import SapiTabel from './pages/SapiTerdata/tabel';
+import SapiTerdataAnalisis from './pages/SapiTerdata/analisis';
 import ProfilePage from './pages/Profile';
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/peternakan/tabel" element={<PeternakanTabel />} />
         <Route path="/peternakan/analisis" element={<PeternakanAnalisis />} />
+        <Route path="/sapi-terdata" element={<SapiTerdataAnalisis />} />
         <Route path="/sapi-terdata/tabel" element={<SapiTabel />} />
         <Route path="/sapi-terdata/riwayat" element={<SapiTerdataRiwayat />} />
       </Routes>
