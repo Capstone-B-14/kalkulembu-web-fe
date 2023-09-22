@@ -28,7 +28,7 @@ export default function SapiTerdataRiwayat() {
             <div className="text-black w-[332px] h-[53px] bg-[#DDDDDD] flex justify-center items-center rounded-md text-[20px]">
               9/4/2022
             </div>
-            <div className="w-[186px] h-[53px] bg-[#AFC97E] flex justify-center items-center rounded-md text-[20px] ml-4 uppercase">
+            <div className="w-[186px] h-[53px] bg-[#6C8C56] flex justify-center items-center rounded-md text-[20px] ml-4 uppercase">
               sehat
             </div>
           </div>
