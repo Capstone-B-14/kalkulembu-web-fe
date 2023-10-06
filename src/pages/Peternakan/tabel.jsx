@@ -5,6 +5,8 @@ import Sidebar from "../../components/Sidebar";
 import DropdownComponent from "../../components/Dropdown";
 import NavButtonPeternakan from "../../components/NavButton/peternakan";
 import SearchBar from "../../components/SearchBar";
+import Card  from "../../components/Card";
+import CardTabel from "../../components/CardTabel";
 
 
 export default function PeternakanTabel() {
@@ -22,6 +24,16 @@ export default function PeternakanTabel() {
          </div>
          <div className="mx-4 my-9">
             <NavButtonPeternakan/>
+         </div>
+
+         <div className="grid grid-cols-2 gap-4 p-3">
+            <CardTabel />
+            <CardTabel />
+            <CardTabel />
+            <CardTabel />
+            <CardTabel />
+            <CardTabel />
+            
          </div>
         </div>
       </div>
