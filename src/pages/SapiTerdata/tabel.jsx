@@ -5,7 +5,6 @@ import DropdownComponent from "../../components/Dropdown";
 import NavButtonSapi from "../../components/NavButton/sapi";
 import Button from "../../components/Button";
 
-
 export default function SapiTabel() {
   return(
     <div className="flex bg-[#FBFBFB]">

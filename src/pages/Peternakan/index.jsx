@@ -20,7 +20,7 @@ export default function PeternakanAnalisis() {
           <div className='flex mx-4 my-9 pt-4'>
             <NavButtonPeternakan />
           </div>
-          <div className='absolute h-1/2 w-3/5 bg-gray-50 p-12 rounded-lg'>
+          <div className='absolute h-1/2 w-3/5 bg-[#FFFFFF] p-12 rounded-2xl overflow-auto drop-shadow-xl'>
             <TimeSeriesChart />
           </div>
         </div>

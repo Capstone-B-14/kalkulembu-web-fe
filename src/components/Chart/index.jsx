@@ -104,7 +104,7 @@ const TimeSeriesChart = () => {
   };
 
   return (
-    <div className='h-full w-full p-2'>
+    <div className='h-full w-full p-2 bg-[#FFFFFF]'>
       <div className='absolute right-12'>
         <DropdownComponent
           options={timeFilters}

@@ -20,7 +20,6 @@ export default function PeternakanTabel() {
             <DropdownComponent />
             <SearchBar placeholder="Cari Sapi"></SearchBar>
          </div>
-
          <div className="mx-4 my-9">
             <NavButtonPeternakan/>
          </div>
