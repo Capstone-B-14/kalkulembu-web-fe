@@ -15,15 +15,15 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/signup' element={<SignupPage />} />
-        <Route path='/login' element={<LoginPage/>}/>
-        <Route path='/profile' element={<ProfilePage />} />
-        <Route path='/peternakan' element={<PeternakanAnalisis />} />
-        <Route path='/peternakan/tabel' element={<PeternakanTabel />} />
-        <Route path='/sapi-terdata' element={<SapiTerdataAnalisis />} />
-        <Route path='/sapi-terdata/tabel' element={<SapiTabel />} />
-        <Route path='/sapi-terdata/riwayat' element={<SapiTerdataRiwayat />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/signup" element={<SignupPage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/peternakan" element={<PeternakanAnalisis />} />
+        <Route path="/peternakan/tabel" element={<PeternakanTabel />} />
+        <Route path="/sapi-terdata" element={<SapiTerdataAnalisis />} />
+        <Route path="/sapi-terdata/tabel" element={<SapiTabel />} />
+        <Route path="/sapi-terdata/riwayat" element={<SapiTerdataRiwayat />} />
       </Routes>
     </BrowserRouter>
   );

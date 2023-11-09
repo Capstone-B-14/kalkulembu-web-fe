@@ -2,8 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: roboto, raleway;
   line-height: 1.5;
   font-weight: 400;
 
@@ -20,11 +21,11 @@
 
 a {
   font-weight: 500;
-  color: #646cff;
+  color: #75A3BF;
   text-decoration: inherit;
 }
 a:hover {
-  color: #535bf2;
+  color: #2E78A6;
 }
 
 h1 {
@@ -35,20 +36,58 @@ h1 {
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: roboto;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
+
+@media screen and (max-width: 640px) {
+  button {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@media screen and (min-width: 641px) and (max-width: 1024px) {
+  button {
+    font-size: 0.8rem;
+    padding: 1.1rem 0.8rem;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1.2rem;
+  }
+}
+
 button:hover {
-  border-color: #646cff;
+  border-color: #2E78A6;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card-gradasi{
+  background: linear-gradient(to bottom, #2E78A6,
+    #1C4965A6);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  color: #ffffff;
+  border-radius: 8px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: left;
+  object-position: center;
 }
 
 @media (prefers-color-scheme: light) {
@@ -57,9 +96,16 @@ button:focus-visible {
     background-color: #ffffff;
   }
   a:hover {
-    color: #747bff;
+    color: #2E78A6;
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+@media(min-width: 1024px){
+  .card-gradasi{
+    width: 100%;
+    max-width: none;
   }
 }

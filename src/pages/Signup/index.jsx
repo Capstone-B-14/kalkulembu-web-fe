@@ -5,7 +5,7 @@ export default function SignupPage() {
   return (
     <div className="bg-[#2E78A6] h-[100vh]">
       <div className="flex content-center justify-center">
-        <div className="relative z-20 right-[200px] mt-[100px]">
+        <div className="relative z-20 right-[200px] mt-[50px]">
           <svg
             width="101"
             height="101"

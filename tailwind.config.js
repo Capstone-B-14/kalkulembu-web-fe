@@ -1,8 +1,16 @@
 /** @type {import('tailwindcss').Config} */
-export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+module.exports = {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        roboto: ["Roboto", "sans"],
+        raleway: ["Raleway", "sans"],
+      },
+    },
   },
-  plugins: [],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("autoprefixer"),
+    require("tailwindcss")],
 };

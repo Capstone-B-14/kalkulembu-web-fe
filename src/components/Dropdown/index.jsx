@@ -19,7 +19,7 @@ const DropdownComponent = ({ options, value, onSelect, placeholder }) => {
         options={options}
         onChange={handleSelect}
         value={selectedOption}
-        className=' bg-black hover:bg-gray-300 justify-center rounded-sm shadow-sm w-64'
+        className=' bg-black hover:bg-gray-300 justify-center rounded-sm shadow-sm lg:w-64 md:w-32 ml-3'
         placeholder='Select an option'
       />
     </div>

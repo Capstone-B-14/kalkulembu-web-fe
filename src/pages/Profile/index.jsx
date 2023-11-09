@@ -52,7 +52,7 @@ export default function ProfilePage() {
               </i>
             </Button>
           </div>
-          <div className="flex flex-col items-center justify-start w-[450px] h-auto my-20 border-2 border-gray-700 p-10 rounded">
+          <div className="flex flex-col items-center justify-start w-[450px] h-auto my-20 top-0 border-2 border-gray-700 p-10 rounded">
             <div className="w-full mb-4">
               <TextInput
                 label="Nama Lengkap"

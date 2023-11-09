@@ -19,5 +19,16 @@ export const cardData = [
     img: peternakan3,
     title: "Lurus Mujur Farm",
     address: "Potorono, Bantul, DIY, Indonesia",
-  }
+  },
+  {
+    img: peternakan2,
+    title: "Indofarm",
+    address: "Mlati, Sleman, DIY, Indonesia",
+  },
+
+  {
+    img: peternakan3,
+    title: "Lurus Mujur Farm",
+    address: "Potorono, Bantul, DIY, Indonesia",
+  },
 ];

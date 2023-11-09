@@ -1,65 +1,29 @@
 import React from "react";
 
-// const Card = ({classname,action}) => {
-//   return(
-//     <div>
-//       {children}
-//     </div>
-//   );
-// };
-
-// export default Card;
-
-
-// export default function Card({children, classname, action}){
-//   return(
-//     <Card classname={classname} onClick={action}>
-//       {children}
-//     </Card>
-//   );
-// }
-
-//const Card = (props) => {
-  //return (
-    //<div>
-      //{props.details.map((value, index) => (
-        //<div
-          //key={index}
-          //className='inline-block h-[350px] w-[300px] relative bg-[#fbfbfb] rounded-md mx-3 my-2 shadow-lg p-3'
-        //>
-          //<img
-            //src={value.img}
-            //alt='img'
-            //className='rounded-md rounded-b-none object-center h-[200px] w-full'
-          // />
-          //<div>
-            //<h1 className='font-semibold text-lg break-words'>{value.title}</h1>
-            //<h2 className='text-sm mt-1'>{value.address}</h2>
-            //<button className='bg-lime-300 text-white px-2 py-1 rounded-full text-xs mt-2 '>
-              //Lihat Selengkapnya
-            //</button>
-          //</div>
-        //</div>
-      //))}
-      //;
-    //</div>
-  //);
-//};
-
-//export default Card;
-
 const Card = (cardData) => {
   const {title, children, img, action} = cardData;
   return (
     //<A>
-    <div className="inline-block h-[350px] w-[300px] relative bg-[#fbfbfb] rounded-md mx-3 my-2 shadow-lg p-3">
-      <img
-      src={img}
-        className="rounded-md rounded-b-none object-center h-[200px] w-full"
-      ></img>
-      <h1 className="font-semibold text-lg break-words">{title}</h1>
-        <h2 className="text-sm mt-1">{children}</h2>
-      <button className="mt-3 bg-lime-300 border-lime-100 hover:bg-lime-200">{action}</button>
+    <div className=" h-[90px] w-[80px] lg:h-[350px] lg:w-[300px] md:h-[250px] md:w-[150px] relative">
+      {img && (
+        <img
+          src={img}
+          className=" rounded h-[100%] md:h-[100px] lg:h-[200px] lg:w-full md:w-[90%] w-[150%] mx-auto my-auto"
+        ></img>
+      )}
+      <h1 className="font-semibold text-sm lg:text-lg md:text-sm md:pl-1.5">
+        {title}
+      </h1>
+      <h2 className=" text-xs md:text-xs lg:text-sm lg:mt-1 md:pl-1.5">
+        {children}
+      </h2>
+      <div className="md:text-lg">
+        {action && (
+          <button className="action-button mt-3 bg-lime-300">
+            {action}
+          </button>
+        )}
+      </div>
     </div>
     //</A>
   );
