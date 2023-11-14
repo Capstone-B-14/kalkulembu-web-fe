@@ -25,4 +25,25 @@ export const cardTabel = [
     bobot: "500 kg",
     condition: "sehat",
   },
+  {
+    title: "Bejo si Sapi",
+    age: "24 tahun",
+    img: sapi1,
+    bobot: "500 kg",
+    condition: "sehat",
+  },
+  {
+    title: "Beji si Sapi",
+    age: "12 tahun",
+    img: sapi2,
+    bobot: "500 kg",
+    condition: "sakit",
+  },
+  {
+    title: "Booba",
+    age: "10 tahun",
+    img: sapi3,
+    bobot: "500 kg",
+    condition: "sehat",
+  },
 ];

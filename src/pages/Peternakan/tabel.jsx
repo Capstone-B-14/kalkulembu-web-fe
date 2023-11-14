@@ -18,16 +18,16 @@ export default function PeternakanTabel() {
 
         <div className="mr-16 ml-5 mt-20 flex flex-col md:mt-5">
           <div className="flex w-full gap-y-4 md:flex-col md:ml-4">
-            <DropdownComponent className="pl-3 right-0" />
+            <DropdownComponent className="pl-3" />
             <SearchBar
               placeholder="Cari Sapi"
-              className="md:w-[75%]"
+              className="md:w-[50%]"
             ></SearchBar>
           </div>
-          <div className="mx-4 my-9">
+          <div className="ml-4 my-9">
             <NavButtonPeternakan />
           </div>
-          <div className="flex flex-col overflow-y-auto md:h-[65%]">
+          <div className="flex flex-col overflow-auto md:h-[65%] lg:flex-row lg:h-[67%] lg:grid lg:grid-cols-2">
             {data.map((value, index) => {
               return (
                 <div key={index} className="flex flex-col pr-3">

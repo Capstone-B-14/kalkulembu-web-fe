@@ -4,7 +4,7 @@ const CardTabel = (cardData) => {
   const { title, age, img, bobot, condition } = cardData;
   return (
     <div className="flex flex-col overflow-y-auto">
-      <div className="flex flex-row h-[220px] w-[450px] bg-[#912F2F] rounded-md mx-4 my-2 shadow-lg p-3 pt-5">
+      <div className="flex flex-row h-[220px] w-[450px] bg-[#FFFFFF] rounded-md ml-4 my-2 shadow-lg p-3 pt-5 lg:mb-4">
         <div>
           <img
             src={img}

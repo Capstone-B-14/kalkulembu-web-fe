@@ -13,7 +13,7 @@ function SearchBar(props) {
   };
 
   return (
-    <div className="flex items-center bg-[#FBFBFB] border border-[#DDDDDD] rounded-lg lg:w-full">
+    <div className="flex items-center bg-[#FBFBFB] border border-[#DDDDDD] rounded-lg lg:w-full md:w-[70%]">
       <div className="m-4">
         <FaSearch className="text-[#DDDDDD] lg:text-xl md:text-lg sm:text-sm"></FaSearch>
       </div>
