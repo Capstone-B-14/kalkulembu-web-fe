@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { TbSquareRoundedChevronRightFilled } from "react-icons/tb";
 import { BiSolidDashboard } from "react-icons/bi";
+import kalkulembuLogo from "../../assets/kalkulembuLogo.svg";
 
 export default function Sidebar() {
   const [key, setKey] = useState(0); // Initialize key
   const location = useLocation(); // Get the current location
-  const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(true);
+
 
   const SidebarLink = ({ text, linkto }) => {
     // Check if the current location pathname starts with the linkto prop
@@ -14,6 +16,7 @@ export default function Sidebar() {
       location.pathname === linkto ||
       (linkto === "/" && location.pathname === "/") || // Check for homepage
       (linkto !== "/" && location.pathname.startsWith(linkto));
+
 
     return (
       <Link
@@ -52,12 +55,12 @@ export default function Sidebar() {
           onClick={() => setOpen(!open)}
         />
       </div>
-      <div className="flex items-center justify-center w-32 h-32 mx-auto pt-8">
+      <div className="flex items-center justify-center w-48 h-24 lg:w-64 lg:h-32 md:w-64 md:h-32 mx-auto px-5">
         <img
-          src="/src/assets/kalkulembu-logo.png"
-          alt="Logo"
-          className={`transition-all ${open ? "w-0" : "w-32"}`}
-        />
+          src={kalkulembuLogo}
+          alt="Kalkulembu Logo"
+          className={`transition-all ${open ? "w-0" : "w-64"}`}
+        ></img>
       </div>
       <div className={`w-64 my-12 space-y-4 ${open ? "hidden" : "w-32"}`}>
         <SidebarLink text="Dashboard" linkto="/" />

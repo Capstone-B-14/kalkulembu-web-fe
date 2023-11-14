@@ -19,7 +19,7 @@ const Pagination = () => {
           }
           renderOnZeroPageCount={null}
           containerClassName="items-center flex mt-6 mb-5 ml-[10px]"
-          pageClassName="w-8 h-2 flex items-center rounded-md ml-3 hover:bg-lightGray"
+          pageClassName="w-8 h-2 flex items-center rounded-md ml-3 hover:bg-lightGray top-[700px]"
         />
       </div>
     );

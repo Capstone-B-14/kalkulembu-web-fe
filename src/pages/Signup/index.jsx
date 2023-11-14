@@ -1,5 +1,6 @@
 import Button from '../../components/Button';
 import TextInput from '../../components/TextInput';
+import kalkulembuLogo from "../../assets/kalkulembuLogo.svg";
 
 export default function SignupPage() {
   return (
@@ -49,10 +50,10 @@ export default function SignupPage() {
             </Button>
           </form>
         </div>
-        <div className="h-[600px] w-[400px] bg-[#A3BFD9] flex items-center justify-center rounded-[30px] relative right-[60px] pl-[60px] bottom-[50px]">
+        <div className="h-[600px] w-[400px] bg-[#A3BFD9] flex items-center justify-center rounded-[30px] relative right-[70px] pl-[50px] bottom-[50px]">
           <img
-            style={{ width: 200, height: 267 }}
-            src="/src/assets/kalkulembu-logo.png"
+            style={{ width: 300, height: 267 }}
+            src={kalkulembuLogo}
             alt="Kalkulembu Logo"
           />
         </div>

@@ -11,6 +11,20 @@ import Pagination from "../../components/Pagination/index.jsx";
 
 export default function HomePage() {
   const [data] = useState(cardData);
+  const [currentPage, setCurrentPage] = useState(0);
+  const itemsPerPage = 5;
+  if (!data || !Array.isArray(data) || typeof itemsPerPage !== "number") {
+    return <div>Error: Invalid data or itemsPerPage value</div>;
+  }
+
+    const handlePageChange = ({ selected }) => {
+      setCurrentPage(selected);
+    };
+
+    const indexOfLastItem = (currentPage + 1) * itemsPerPage;
+    const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+    const currentItems = data.slice(indexOfFirstItem, indexOfLastItem);
+
   return (
     <>
       <div className="flex flex-row bg-[#FBFBFB] overflow-auto max-w-screen">
@@ -24,7 +38,7 @@ export default function HomePage() {
           </a>
         </div>
         <div className="my-[50px] pt-3 lg:mx-[10px] pl-[50px]">
-          <div className=" flex flex-row justify-center">
+          <div className=" flex flex-row justify-center items-center">
             <div className="card-gradasi absolute">
               <CardDashboard
                 title={"Total Peternakan"}
@@ -40,17 +54,18 @@ export default function HomePage() {
               />
             </div>
           </div>
-          <div className="mt-3 flex lg:flex-row md:flex-col lg:w-full md:h-[10%] space-x-4 space-y-2 gap-0">
-            <SearchBar placeholder="Nama Peternakan" type="text" className="" />
+          <div className="mt-3 flex flex-col lg:flex-row md:flex-col lg:w-full md:h-[10%] space-x-4 space-y-2 gap-0">
+            <SearchBar placeholder="Nama Peternakan" type="text" className="lg:w-full md:w-[50%]" />
             <DropdownComponent className="" />
             <DropdownComponent className="" />
           </div>
           <div>
-            <Pagination />
+            <Pagination
+              pageCount={10} />
           </div>
           <div className="flex overflow-x-auto absolute w-[65%] md:bottom-[20px]">
             <div className="flex flex-row whitespace-nowrap">
-              {data.map((value, index) => {
+              {currentItems.map((value, index) => {
                 return (
                   <div>
                     <div

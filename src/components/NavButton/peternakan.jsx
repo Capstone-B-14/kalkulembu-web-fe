@@ -26,7 +26,7 @@ export default function NavButtonPeternakan() {
 
   return (
     <div className='flex'>
-      <div className='flex justify-between gap-8'>
+      <div className='flex justify-between gap-x-8'>
         <NavButtonLink text='Analisis' linkto='/peternakan' />
         <NavButtonLink text='Tabel' linkto='/peternakan/tabel' />
       </div>

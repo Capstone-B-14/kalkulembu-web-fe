@@ -1,5 +1,6 @@
 import Button from "../../components/Button";
 import TextInput from "../../components/TextInput";
+import kalkulembuLogo from "../../assets/kalkulembuLogo.svg";
 
 export default function LoginPage() {
   return (
@@ -24,8 +25,8 @@ export default function LoginPage() {
       <div className="flex content-center justify-center">
         <div className="h-[600px] w-[750px] bg-[#A3BFD9] flex items-center justify-center rounded-[30px] left-[30px] relative bottom-[50px]">
           <img
-            style={{ width: 200, height: 267 }}
-            src="/src/assets/kalkulembu-logo.png"
+            style={{ width: 600, height: 95 }}
+            src={kalkulembuLogo}
             alt="Kalkulembu Logo"
           />
         </div>

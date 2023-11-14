@@ -13,14 +13,14 @@ function SearchBar(props) {
   };
 
   return (
-    <div className="flex items-center bg-[#FBFBFB] border border-[#DDDDDD] rounded-lg lg:w-full md:w-[25%]">
+    <div className="flex items-center bg-[#FBFBFB] border border-[#DDDDDD] rounded-lg lg:w-full">
       <div className="m-4">
         <FaSearch className="text-[#DDDDDD] lg:text-xl md:text-lg sm:text-sm"></FaSearch>
       </div>
       <input
         type="text"
         placeholder={props.placeholder}
-        className="py-2 px-4 outline-none bg-transparent text-[#0D0D0D] lg:text-lg md:text-lg sm:text-sm"
+        className="py-2 px-2 outline-none bg-transparent text-[#0D0D0D] lg:text-lg md:text-lg sm:text-sm"
         value={searchTerm}
         onChange={handleSearchChange}
       />

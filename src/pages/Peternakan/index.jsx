@@ -9,8 +9,9 @@ export default function PeternakanAnalisis() {
   return (
     <>
       <div className="flex relative bg-[#FBFBFB] max-h-[100%] max-w-[100%]">
-        <Sidebar />
-
+        <div className="top-0">
+          <Sidebar />
+        </div>
         <div className="space-y-8 mx-16 w-2/3 my-20">
           <div className="flex w-1/2">
             <DropdownComponent />
