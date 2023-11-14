@@ -24,7 +24,7 @@ export default function ProfilePage() {
           <div className="flex items-center content-center">
             <img
               className="flex items-center justify-center object-fill w-32 h-32 bg-gray-400 rounded-full"
-              src="/src/assets/kalkulembu-logo.png"
+              src="/src/assets/iconoir_profile-circle.png"
               alt=""
             />
             <div className="flex flex-col justify-center ml-[30px]">
@@ -52,7 +52,7 @@ export default function ProfilePage() {
               </i>
             </Button>
           </div>
-          <div className="flex flex-col items-center justify-start w-[450px] h-auto my-20 top-0 border-2 border-gray-700 p-10 rounded">
+          <div className="flex flex-col items-center justify-start w-[450px] h-auto my-10 top-0 border-2 border-gray-700 p-10 rounded">
             <div className="w-full mb-4">
               <TextInput
                 label="Nama Lengkap"
