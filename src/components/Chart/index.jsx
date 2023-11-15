@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+/* eslint-disable react/prop-types */
+import { useState, useEffect } from "react";
 import { Line } from "react-chartjs-2";
 import "chartjs-adapter-date-fns";
 import { enUS } from "date-fns/locale";
@@ -6,43 +7,52 @@ import { Chart, registerables } from "chart.js";
 import dayjs from "dayjs";
 
 import dailyCowWeightData from "../../_data/dailyCow"; // Import dailyCowWeightData from the correct path
-import Button from "../Button";
+// import Button from "../Button";
 import DropdownComponent from "../../components/Dropdown";
 
 Chart.register(...registerables);
 
 const timeFilters = [
-  { key: "day", value: "day" },
-  { key: "month", value: "month" },
-  { key: "year", value: "year" },
+  { label: "day", value: "day" },
+  { label: "month", value: "month" },
+  { label: "year", value: "year" },
 ];
 
-const TimeSeriesChart = () => {
-  const [chartData, setChartData] = useState(dailyCowWeightData);
-  const [filter, setFilter] = useState("day"); // Default filter
+const TimeSeriesChart = ({
+  title = "Jumlah Sapi di Peternakan",
+  timeSeriesdata = [],
+}) => {
+  const [chartData, setChartData] = useState(timeSeriesdata);
+  const [filter, setFilter] = useState("day");
 
   const handleFilterChange = (selectedOption) => {
-    setFilter(selectedOption.value);
+    setFilter(selectedOption);
   };
 
   useEffect(() => {
     // Filter data based on the selected filter (day, month, year)
-    let filteredData = dailyCowWeightData;
+    let filteredData = timeSeriesdata;
+
+    if (filter === "day") {
+      filteredData = timeSeriesdata.filter((entry) =>
+        dayjs(entry.date).isSame(dayjs(new Date()), "day")
+      );
+    }
 
     if (filter === "month") {
-      // Filter data for the entire month of September 2023
-      filteredData = dailyCowWeightData.filter((entry) =>
-        dayjs(entry.date).isSame(dayjs("2023-09-01"), "month")
+      filteredData = timeSeriesdata.filter((entry) =>
+        dayjs(entry.date).isSame(dayjs(new Date()), "month")
       );
-    } else if (filter === "year") {
-      // Filter data for the entire year of 2023
-      filteredData = dailyCowWeightData.filter((entry) =>
-        dayjs(entry.date).isSame(dayjs("2023-01-01"), "year")
+    }
+
+    if (filter === "year") {
+      filteredData = timeSeriesdata.filter((entry) =>
+        dayjs(entry.date).isSame(dayjs(new Date()), "year")
       );
     }
 
     setChartData(filteredData);
-  }, [filter]);
+  }, [timeSeriesdata, filter]);
 
   // Define chart data
   const chartDataFormatted = {
@@ -71,23 +81,23 @@ const TimeSeriesChart = () => {
       },
       title: {
         display: true,
-        text: "Jumlah Sapi di Peternakan",
+        text: title,
       },
       datalabels: {
         display: true,
         align: "end",
         anchor: "end",
-        formatter: (value) => value.toFixed(2), // Format data labels
+        formatter: (value) => value.toFixed(2),
       },
     },
     scales: {
-      x: {
+      xAxes: {
         type: "time",
         time: {
           unit: filter, // Dynamic x-axis unit (day, month, year)
           displayFormats: {
             day: "dd MMM",
-            month: "MMM yyyy",
+            month: "MMMM yyyy",
             year: "yyyy",
           },
         },
@@ -104,16 +114,16 @@ const TimeSeriesChart = () => {
   };
 
   return (
-    <div className='h-full w-full p-2 bg-[#FFFFFF]'>
-      <div className='absolute right-12'>
+    <div className="h-full w-full p-2 bg-[#FFFFFF]">
+      <div className="absolute right-12">
         <DropdownComponent
           options={timeFilters}
-          value={filter}
           onSelect={handleFilterChange}
-          placeholder='Pilih Peternakan'
+          placeholder="Pilih Peternakan"
+          className="w-40"
         />
       </div>
-      <div className='h-full min-w-full'>
+      <div className="h-full min-w-full">
         {/* Chart */}
         <Line data={chartDataFormatted} options={options} />
       </div>
