@@ -23,7 +23,7 @@ export default function ProfilePage() {
         <div className="flex flex-col mt-20 ml-20 mr-10">
           <div className="flex items-center content-center">
             <img
-              className="flex items-center justify-center object-fill w-32 h-32 bg-gray-400 rounded-full"
+              className="flex items-center justify-center object-fill w-31 h-31 bg-gray-400 rounded-full"
               src="/src/assets/iconoir_profile-circle.png"
               alt=""
             />
