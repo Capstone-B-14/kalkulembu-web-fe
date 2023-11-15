@@ -1,5 +1,3 @@
-import React from"react";
-
 const CardTabel = (cardData) => {
   const { title, age, img, bobot, condition } = cardData;
   return (
@@ -15,7 +13,9 @@ const CardTabel = (cardData) => {
           <div className="text-2xl text-black font-bold">{title}</div>
           <div className="text-base text-black font-semibold">{age}</div>
           <div className="text-base text-black font-semibold">{bobot}</div>
-          <div className="text-base text-black font-semibold">{condition}</div>
+          <div className="text-base text-black font-semibold">
+            {condition ? "Sehat" : "Sakit"}
+          </div>
         </div>
       </div>
     </div>

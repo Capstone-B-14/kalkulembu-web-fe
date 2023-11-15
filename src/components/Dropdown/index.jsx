@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+/* eslint-disable react/prop-types */
+import { useEffect, useState } from "react";
 import Dropdown from "react-dropdown";
 import "react-dropdown/style.css";
 
-const options = [];
-const defaultOption = options[0];
+const defaultOptions = [{ label: " ", value: " " }];
 
-const DropdownComponent = ({ options, value, onSelect, placeholder }) => {
-  const [selectedOption, setSelectedOption] = useState();
+const DropdownComponent = ({
+  options = defaultOptions,
+  onSelect = () => {},
+  className = "",
+}) => {
+  const [selectedOption, setSelectedOption] = useState(options[0]);
+
+  useEffect(() => {
+    setSelectedOption(options[0]);
+  }, [options]);
 
   const handleSelect = (option) => {
-    setSelectedOption(option); // Update the local state
-    onSelect(option); // Call the parent component's onSelect function
+    setSelectedOption(option);
+    onSelect(option.value);
   };
 
   return (
@@ -19,8 +27,8 @@ const DropdownComponent = ({ options, value, onSelect, placeholder }) => {
         options={options}
         onChange={handleSelect}
         value={selectedOption}
-        className=' bg-black hover:bg-gray-300 justify-center rounded-sm shadow-sm w-64 ml-3 md:ml-0'
-        placeholder='Select an option'
+        className={`bg-black hover:bg-gray-300 justify-center rounded-sm shadow-sm w-64 ml-3 md:ml-0 ${className}`}
+        placeholder="Select an option"
       />
     </div>
   );

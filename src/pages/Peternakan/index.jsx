@@ -1,72 +1,87 @@
-import React from "react";
-
 import Sidebar from "../../components/Sidebar";
+import Analysis from "./analysis";
+import Table from "./tabel";
 import DropdownComponent from "../../components/Dropdown";
-import TimeSeriesChart from "../../components/Chart";
-import NavButtonPeternakan from "../../components/NavButton/peternakan";
-import { GiCow } from "react-icons/gi";
-import KeteranganAnalisis from "../../components/KeteranganAnalisis/index";
-import iconsapi from "../../assets/healthicons_animal.svg";
-import iconjantan from "../../assets/mingcute_male-line.svg"
-import iconfemale from "../../assets/jam_female.svg"
-import { CgSmileMouthOpen } from "react-icons/cg";
-import { MdOutlineSick } from "react-icons/md";
+import { useEffect, useState } from "react";
+import { useGetCattleData } from "../../services/cattle";
+import { useGetFarms } from "../../services/farm";
 
-export default function PeternakanAnalisis() {
+export default function PeternakanTabel() {
+  const [tab, setTab] = useState("analysis");
+  const [dropdownOptions, setDropdownOptions] = useState([]);
+  const [currentFarmId, setCurrentFarmId] = useState();
+  const [search, setSearch] = useState("");
+
+  const { data: dataCattles } = useGetCattleData({
+    id: currentFarmId,
+    withStats: true,
+  });
+  const { data: dataFarms } = useGetFarms();
+
+  useEffect(() => {
+    const options = dataFarms?.data?.map((farm) => ({
+      label: farm.name,
+      value: farm.id,
+    }));
+    if (options?.length) setCurrentFarmId(options[0].value);
+    setDropdownOptions(options);
+    setSearch("");
+  }, [dataFarms]);
+
   return (
     <>
-      <div className="flex bg-[#FBFBFB]">
-        <div className="top-0">
-          <Sidebar />
-        </div>
-        <div className="space-y-8 mx-16 w-3/4 my-20">
-          <div className="flex w-1/2">
-            <DropdownComponent />
-          </div>
-          <div className="flex mx-4 my-9 pt-4">
-            <NavButtonPeternakan />
-          </div>
-          <div className="absolute h-1/2 w-3/5 bg-[#FFFFFF] p-12 rounded-2xl overflow-auto drop-shadow-xl">
-            <TimeSeriesChart />
-          </div>
-          <div className="ml-[850px] p-5">
-            <KeteranganAnalisis
-                title={"Total Sapi"}
-                children2={"85"}
-                img={iconsapi}
-              />
-            <KeteranganAnalisis
-                title={"Sapi jantan"}
-                children2={"10"}
-                img={iconjantan}
-              />
-            <KeteranganAnalisis
-                title={"Sapi betina"}
-                children2={"65"}
-                img={iconfemale}
-              />
-          </div>  
-        <div className="p-5 flex flex-row absolute">
-          <div className="h-[150px] w-[150px] bg-[#FFFFFF] rounded-2xl drop-shadow-xl mr-10 ">
-            <div className="bg-[#A3BFD9] p-1 rounded-b-2xl mx-6"></div>
-            <div className="flex flex-col items-center p-3 ">
-            <CgSmileMouthOpen className="" color="black" size={40}/>
-            <text className="text-black font-bold">Sapi Sehat</text>
-            <text className="text-black font-bold text-2xl">34</text>
-            <text className="text-black font-bold">ekor</text>
-            </div>
-          </div>
+      <div className="flex bg-[#FBFBFB] max-w-screen max-h-screen">
+        <Sidebar />
 
-          <div className="h-[150px] w-[150px] bg-[#FFFFFF] rounded-2xl drop-shadow-xl mr-10 ">
-            <div className="bg-[#E78383] p-1 rounded-b-2xl mx-6"></div>
-            <div className="flex flex-col items-center p-3 ">
-            <MdOutlineSick className="" color="black" size={40}/>
-            <text className="text-black font-bold">Sapi Sakit</text>
-            <text className="text-black font-bold text-2xl">46</text>
-            <text className="text-black font-bold">ekor</text>
+        <div className="ml-10 mt-20 flex flex-col md:mt-5 max-h-screen overflow-auto w-full">
+          <div className="ml-4 my-9 flex gap-4">
+            <DropdownComponent
+              options={dropdownOptions}
+              onSelect={setCurrentFarmId}
+              className="pl-3"
+            />
+          </div>
+          <div className="ml-4 my-9 flex gap-4">
+            <div
+              className={`text-xl font-bold text-[#0D0D0D] flex flex-row items-center h-[50px] w-[162px] rounded-xl justify-center
+                    ${
+                      tab === "analysis"
+                        ? "bg-[#AFC97E] rounded-xl text-[#0D0D0D] hover:text-white"
+                        : "bg-[#0D0D0D] text-[#FBFBFB] hover:text-[#AFC97E]"
+                    }`}
+              onClick={() => {
+                setTab("analysis");
+              }}
+            >
+              <span className="inline truncate hover:whitespace-normal">
+                Analysis
+              </span>
+            </div>
+            <div
+              className={`text-xl font-bold text-[#0D0D0D] flex flex-row items-center h-[50px] w-[162px] rounded-xl justify-center
+                    ${
+                      tab === "table"
+                        ? "bg-[#AFC97E] rounded-xl text-[#0D0D0D] hover:text-white"
+                        : "bg-[#0D0D0D] text-[#FBFBFB] hover:text-[#AFC97E]"
+                    }`}
+              onClick={() => {
+                setTab("table");
+              }}
+            >
+              <span className="inline truncate hover:whitespace-normal">
+                Table
+              </span>
             </div>
           </div>
-        </div>
+          {tab === "analysis" ? (
+            <Analysis dataCattles={dataCattles} />
+          ) : (
+            <Table
+              setAnalysis={() => {}}
+              dataCattles={dataCattles}
+              {...{ search, setSearch }}
+            />
+          )}
         </div>
       </div>
     </>
