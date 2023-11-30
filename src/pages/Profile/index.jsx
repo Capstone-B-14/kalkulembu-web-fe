@@ -28,8 +28,8 @@ export default function ProfilePage() {
               alt=""
             />
             <div className="flex flex-col justify-center ml-[30px]">
-              <p className="mb-1 text-3xl font-bold">Pak Peternak</p>
-              <p className="text-xl font-semibold">Peternakan Maju Mundur</p>
+              <p className="mb-1 text-black text-3xl font-bold">Pak Peternak</p>
+              <p className="text-xl text-black font-semibold">Peternakan Maju Mundur</p>
             </div>
             <Button
               className="content-center justify-center flex w-[150px] h-[50px] ml-[400px] bg-[#75A3BF]"

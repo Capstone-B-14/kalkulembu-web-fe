@@ -6,13 +6,13 @@ export default function SapiTabel({ dataCattleStats = [] }) {
     <>
       {/* Table Header */}
       <div className="flex flex-row min-w-max mx-4 mt-6 gap-x-2 pb-2">
-        <div className="flex basis-1/4 justify-center text-[#0D0D0D] font-bold text-lg mx-4 pl-1">
+        <div className="flex basis-1/4 justify-center text-[#0D0D0D] font-bold ml-[-30px] text-lg ">
           Tanggal
         </div>
-        <div className="flex basis-1/4 justify-center text-[#0D0D0D] font-bold text-lg mx-5 pl-2">
+        <div className="flex basis-1/4 justify-center text-[#0D0D0D] font-bold ml-[-10px] text-lg ">
           Umur (Bulan)
         </div>
-        <div className="flex basis-1/4 justify-center text-[#0D0D0D] font-bold text-lg pl-3">
+        <div className="flex basis-1/4 justify-center text-[#0D0D0D] font-bold text-lg ">
           Bobot (kg)
         </div>
         <div className="flex basis-1/4 justify-center text-[#0D0D0D] font-bold text-lg"></div>
