@@ -20,7 +20,7 @@ export default function ProfilePage() {
         <div>
           <Sidebar />
         </div>
-        <div className="flex flex-col mt-20 ml-20 mr-10">
+        <div className="flex flex-col mt-10 ml-20 mr-10">
           <div className="flex items-center content-center">
             <img
               className="flex items-center justify-center object-fill w-31 h-31 bg-gray-400 rounded-full"
@@ -52,8 +52,8 @@ export default function ProfilePage() {
               </i>
             </Button>
           </div>
-          <div className="flex flex-col items-center justify-start w-[450px] h-auto my-10 top-0 border-2 border-gray-700 p-10 rounded">
-            <div className="w-full mb-4">
+          <div className="flex flex-col items-center justify-start w-[450px] h-auto my-5 top-0 border-2 border-gray-700 p-10 rounded">
+            <div className="w-full mb-2">
               <TextInput
                 label="Nama Lengkap"
                 disabled={disable ? true : ''}
